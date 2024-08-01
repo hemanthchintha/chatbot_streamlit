@@ -68,7 +68,7 @@ class EventHandler(AssistantEventHandler):
     def on_text_delta(self, delta, snapshot):
         if snapshot.value:
             text_value = re.sub(
-                r"\[(.*?)\]\s*\(\s*(.*?)\s*\)", "Download Link", snapshot.value
+                r"\[(.*?)\]\s*\(\s*(.*?)\s*\)【\d+:\d+†source】", "Download Link", snapshot.value
             )
             st.session_state.current_message = text_value
             st.session_state.current_markdown.markdown(
